@@ -66,3 +66,13 @@ grid on;
 %% Error
 max_error = max(abs(functional_value - approx_value));
 disp(['Maximum Error = ', num2str(max_error)]);
+
+%% Error plot (pointwise error)
+error_values = abs(functional_value - approx_value);
+
+figure;
+plot(test_points, error_values, 'k', 'LineWidth', 2);
+
+title('Pointwise Error |f(x) - s(x)|');
+xlabel('x'); ylabel('Error');
+grid on;
