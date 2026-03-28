@@ -65,4 +65,14 @@ function [] = Problem_1(f, a, b, n)
     xlabel('x'); ylabel('Error');
     grid on;
 
+    % Plotting Relative error 
+    rel_error = (error_values ./ max(abs(functional_value), 1e-12))*100;
+
+    figure;
+    plot(test_points, rel_error, 'r', 'LineWidth', 2);
+
+    title('Relative Error |f(x) - s(x)| / |f(x)|');
+    xlabel('x'); ylabel('Relative Error');
+    grid on;
+
 end
